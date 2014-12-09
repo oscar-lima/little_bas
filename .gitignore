@@ -1,0 +1,40 @@
+.metadata/
+build/
+CMakeFiles/
+bin/
+CMakeCache.txt
+
+#temporary files
+*.*~
+*.bak
+CATKIN_IGNORE
+
+# Compiled Object files
+*.exe
+*.bin
+*.slo
+*.lo
+*.o
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+
+Eclipse project files
+.cproject
+.project
+cmake_install.cmake
+Makefile
+
+# MacOS files
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+
+.directory
