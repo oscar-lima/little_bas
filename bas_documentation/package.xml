@@ -1,12 +1,18 @@
 <?xml version="1.0"?>
 <package>
-<name>bas_documentation</name>
-<version>1.0</version>
-<description>little bas project documentation</description>
-<license>GPLv3</license>
-<author email="olima_84@yahoo.com">Oscar Lima</author>
-<buildtool_depend>catkin</buildtool_depend>
-<export>
-<metapackage/>
-</export>
+	<name>bas_documentation</name>
+	<version>1.0.0</version>
+	<description>
+		Little bas differential robot project documentation
+	</description>
+
+	<maintainer email="olima_84@yahoo.com">Oscar Lima</maintainer>
+
+	<license>GPLv2</license>
+
+	<buildtool_depend>catkin</buildtool_depend>
+	<export>
+	<metapackage/>
+	</export>
+
 </package>
