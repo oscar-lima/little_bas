@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package>
+	<name>bas_tutorials</name>
+	<version>1.0.0</version>
+	<description>
+		bas_tutorials metapackage
+	</description>
+
+	<maintainer email="olima_84@yahoo.com">Oscar Lima</maintainer>
+
+	<license>GPLv2</license>
+
+	<buildtool_depend>catkin</buildtool_depend>
+	<export>
+		<metapackage/>
+	</export>
+</package>
