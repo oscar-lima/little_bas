@@ -1,4 +1,4 @@
-Crazy robot
-===========
+Little bas robot
+================
 
-Repository for holding general purpose code for robots.
+Please go inside bas_documentation folder to read all documentation related to this project
