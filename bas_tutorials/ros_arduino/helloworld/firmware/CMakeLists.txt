@@ -8,6 +8,6 @@ include_directories(${ROS_LIB_DIR})
 generate_arduino_firmware(hello
   SRCS chatter.cpp ${ROS_LIB_DIR}/time.cpp
   BOARD uno
-  #PORT /dev/arduino/arduino_one_9523335323135181E1B2
-  PORT /dev/ttyACM0
+  PORT /dev/arduino/arduino_one_9523335323135181E1B2
+  #PORT /dev/ttyACM0
 )
