@@ -9,9 +9,8 @@ documentation can be found on:
 
 1. Install dependencies
 
-		sudo apt-get install ros-hydro-rosserial-arduino
-		sudo apt-get install ros-hydro-rosserial
-		sudo apt-get install ros-hydro-rosserial-leonardo-cmake
+		sudo apt-get install ros-indigo-rosserial-arduino
+		sudo apt-get install ros-indigo-rosserial
 
 2. go to your sketchbook libraries arduino directory
 
