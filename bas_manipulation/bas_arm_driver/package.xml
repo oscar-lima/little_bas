@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package>
+	<name>bas_arm_driver</name>
+	<version>1.0.0</version>
+	<description>
+		Driver for little bas arm, is just a serial port open loop 
+		communication c++ based on libserial-dev ubuntu package.
+		
+		This node waits until a joint message is received and then
+		sends the command trough the serial port.
+		
+		A joint message contains the desired angle for each joint.
+	</description>
+
+	<maintainer email="olima_84@yahoo.com">Oscar Lima</maintainer>
+	<license>BSD</license>
+	<buildtool_depend>catkin</buildtool_depend>
+	<build_depend>roscpp</build_depend>
+	<run_depend>roscpp</run_depend>
+	
+</package>
