@@ -6,26 +6,36 @@ find_package(catkin REQUIRED COMPONENTS
 )
 
 catkin_package(
-#  INCLUDE_DIRS include
-#  LIBRARIES bas_arm_driver
-#  CATKIN_DEPENDS roscpp
-#  DEPENDS system_lib
 )
 
 # include_directories(include)
-include_directories(
-  ${catkin_INCLUDE_DIRS}
+include_directories(bas_arm_driver
+	include/
+)
+
+# include_directories(include)
+include_directories(bas_arm_driver_node
+	include/
+	${catkin_INCLUDE_DIRS}
 )
 
 ## Declare a cpp library
-# add_library(bas_arm_driver
-#   src/${PROJECT_NAME}/bas_arm_driver.cpp
-# )
+add_library(bas_arm_driver
+	src/l6ac-kt_arm_driver.cpp
+)
 
 ## Declare a cpp executable
-# add_executable(bas_arm_driver_node src/bas_arm_driver_node.cpp)
+add_executable(bas_arm_driver_node 
+	nodes/bas_arm_driver_node.cpp
+)
 
 ## Specify libraries to link a library or executable target against
-# target_link_libraries(bas_arm_driver_node
-#   ${catkin_LIBRARIES}
-# )
+target_link_libraries(bas_arm_driver
+	/usr/lib/libserial.so
+)
+
+## Specify libraries to link a library or executable target against
+target_link_libraries(bas_arm_driver_node
+	bas_arm_driver
+	${catkin_LIBRARIES}
+)
