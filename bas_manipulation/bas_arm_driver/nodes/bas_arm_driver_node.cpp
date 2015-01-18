@@ -1,31 +1,39 @@
 #include "ros/ros.h"
 #include "std_msgs/String.h"
+#include "bas_manipulation_msgs/RawArmGoal.h"
 #include <l6ac-kt_arm_driver.h>
 
-BasArm arm1("/dev/ttyUSB0", true);
+BasArm arm1;
 
-void chatterCallback(const std_msgs::String::ConstPtr& msg)
+void RawarmGoalCallback(const bas_manipulation_msgs::RawArmGoal::ConstPtr& msg)
 {
-	ROS_INFO("testing bas arm: [%s]", msg->data.c_str());
-	int angle = atoi(msg->data.c_str());
+	bas_manipulation_msgs::RawArmGoal arm_goal;
+	arm_goal = *msg;
 	
+	std::cout << "message received" << std::endl;
+	
+	arm1.move_many_joints(&arm_goal.motor_ids[0], &arm_goal.goal_pos[0],
+						  arm_goal.number_of_joints);
 	
 }
 
 int main(int argc, char **argv)
 {
 	ros::init(argc, argv, "bas_arm_driver");
-	ros::NodeHandle nh;
-	ros::Subscriber sub = nh.subscribe("test_bas_arm", 1, chatterCallback);
+	ROS_INFO("Arm driver node initialized...");
+	ros::NodeHandle nh("~");
+	ros::Subscriber sub = nh.subscribe("raw_arm_goal", 1, RawarmGoalCallback);
+	
+	std::string arm_port_name;
+	
+	//getting arm id from parameter server
+	nh.param<std::string>("arm_port_name", arm_port_name, "/dev/ttyUSB0");
+	
+	//setup arm
+	arm1.setup_arm("/dev/ttyUSB0", true);
 	
 	//initialize bas arm
 	arm1.init_arm();
-	
-	int joint = 0;
-	int angle = 80;
-	
-	//move arm to home position
-	arm1.move_one_joint(&joint, &angle);
 	
 	ros::spin();
 

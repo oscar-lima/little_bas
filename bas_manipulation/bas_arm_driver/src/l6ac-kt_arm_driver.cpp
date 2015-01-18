@@ -9,6 +9,13 @@
 
 #include <l6ac-kt_arm_driver.h>
 
+BasArm::BasArm()
+{
+	//default values
+	port_name_ = "/dev/ttyUSB0";
+	baud_ = true;
+}
+
 BasArm::BasArm(const char *port_name, bool baud)
 {
 	port_name_ = port_name;
@@ -20,13 +27,16 @@ BasArm::~BasArm()
 	serial_port_.Close();
 }
 
+void BasArm::setup_arm(const char *port_name, bool baud)
+{
+	port_name_ = port_name;
+	baud_ = baud;
+}
+
 bool BasArm::init_arm()
 {
-	string portname;
-	portname = *BasArm::port_name_;
-	
 	// Open the serial port
-	serial_port_.Open(portname);
+	serial_port_.Open(port_name_);
 	
 	if (!serial_port_.good())
 	{
@@ -116,14 +126,13 @@ bool BasArm::move_one_joint(int* joint, int* angle)
 	}
 }
 
-bool BasArm::move_many_joints(int* joint_values, int* angle_values)
+bool BasArm::move_many_joints(int* joint_values, int* angle_values, int number_of_joints)
 {
 	int array_lenght = 0;
 	const int BUFFER_SIZE = 3;
 	char output_buffer[BUFFER_SIZE];
 	
-	//getting the array lenght
-	while(*joint_values != '\0')
+	for(int i=0; i < number_of_joints; i++)
 	{
 		output_buffer[0] = 255;
 		output_buffer[1] = *joint_values;
@@ -133,16 +142,17 @@ bool BasArm::move_many_joints(int* joint_values, int* angle_values)
 		if (serial_port_.good())
 		{
 			serial_port_.write(output_buffer, BUFFER_SIZE);
-			return true;
 		}
 		else
 		{
 			return false;
 		}
 		
-		array_lenght++;
 		joint_values++;
+		angle_values++;
+		array_lenght++;
 	}
 	
-	std::cout << "Succesfully written" << array_lenght << "bytes to serial port." << std::endl;
+	std::cout << "Succesfully written " << array_lenght << " bytes to serial port." << std::endl;
+	return true;
 }
