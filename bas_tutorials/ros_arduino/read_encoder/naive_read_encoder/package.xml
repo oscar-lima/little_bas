@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<package>
+	<name>naive_read_encoder</name>
+	<version>1.0.0</version>
+	<description>
+		read_encoder tutorial, is based on the push button tutorial, but reads a
+		incremental rotary encoder based on signals A, B and full rotation signal
+		this project is a bad example on how to read an encoder, since it skips
+		ticks. Please use it to learn about it but refer to the tutorial
+		read_one_encoder to achieve good results.
+		
+		As you will see, read_one_encoder uses interruptions to catch all ticks
+		comming from the encoder.
+	</description>
+
+	<maintainer email="olima_84@yahoo.com">Oscar Lima</maintainer>
+
+	<license>GPLv2</license>
+
+	<buildtool_depend>catkin</buildtool_depend>
+	<build_depend>rosserial_arduino</build_depend>
+	<build_depend>rosserial_client</build_depend>
+	<build_depend>std_msgs</build_depend>
+	<run_depend>rosserial_arduino</run_depend>
+	<run_depend>rosserial_client</run_depend>
+	<run_depend>std_msgs</run_depend>
+
+</package>
