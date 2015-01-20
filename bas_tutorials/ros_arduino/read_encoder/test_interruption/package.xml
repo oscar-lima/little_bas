@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<package>
+	<name>test_interruption</name>
+	<version>1.0.0</version>
+	<description>
+		test interruption in the arduino uno board, wire a button to pin 3 and watch
+		the led blinking, this is due to the fact that every change from low to high
+		in the pin3 of the microcontroller (arduino board) will interrupt whatever
+		loop function is doing and it will attend the blink function. After finishing
+		with blink function it will then continue what it was previously doing.
+	</description>
+
+	<maintainer email="olima_84@yahoo.com">Oscar Lima</maintainer>
+
+	<license>GPLv2</license>
+
+	<buildtool_depend>catkin</buildtool_depend>
+	<build_depend>rosserial_arduino</build_depend>
+	<build_depend>rosserial_client</build_depend>
+	<build_depend>std_msgs</build_depend>
+	<run_depend>rosserial_arduino</run_depend>
+	<run_depend>rosserial_client</run_depend>
+	<run_depend>std_msgs</run_depend>
+
+</package>
