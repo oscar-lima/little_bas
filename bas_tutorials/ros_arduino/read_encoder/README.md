@@ -1,8 +1,7 @@
-please cat the package.xml file inside this folder for reference or
-alternatively do:
+The suggested order for trying this tutorials is the following:
 
-		roscd bas_documentation
+1. naive_read_encoder
 
-and take a look at little bas documentation
+2. test_interruption
 
-thanks!
+3. read_one_encoder
