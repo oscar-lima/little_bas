@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <package>
-	<name>bas_hardware</name>
+	<name>bas_base_drivers</name>
 	<version>1.0.0</version>
 	<description>
-		bas hardware metapackage
+		bas base drivers metapackage
 	</description>
 
 	<maintainer email="olima_84@yahoo.com">Oscar Lima</maintainer>
