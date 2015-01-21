@@ -17,8 +17,8 @@
 //Interrupt no. 0 is related to pin2 on the arduino board
 #define EncoderInterrupt 0
 
-//Encoder count variable declared as long integer (-32767 to 32767)
-volatile long _EncoderTicks = 0;
+//Encoder count variable declared as long integer (-32,768 to 32,767)
+volatile int _EncoderTicks = 0;
 
 ros::NodeHandle nh;
 
