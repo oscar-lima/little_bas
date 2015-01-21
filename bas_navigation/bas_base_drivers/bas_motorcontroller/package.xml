@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <package>
-  <name>mdr_volksbot_motorcontroller</name>
+  <name>bas_motorcontroller</name>
   <version>0.0.1</version>
   <description>driver for the VolksBot motor controller</description>
 

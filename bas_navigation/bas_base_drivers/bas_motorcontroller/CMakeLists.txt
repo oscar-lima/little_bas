@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(mdr_volksbot_motorcontroller)
+project(bas_motorcontroller)
 
 find_package(catkin REQUIRED
   COMPONENTS
@@ -46,12 +46,12 @@ add_library(volksbot_motorcontroller
   common/src/support/timestamp.cpp
 )
 
-add_executable(volksbot_motorcontroller_node 
+add_executable(bas_motorcontroller_node 
   ros/src/volksbot_motorcontroller_node.cpp
 )
-add_dependencies(volksbot_motorcontroller_node ${catkin_EXPORTED_TARGETS})
+add_dependencies(bas_motorcontroller_node ${catkin_EXPORTED_TARGETS})
 
-target_link_libraries(volksbot_motorcontroller_node
+target_link_libraries(bas_motorcontroller_node
   volksbot_motorcontroller  
   ${catkin_LIBRARIES}
 )
@@ -60,7 +60,7 @@ install(TARGETS volksbot_motorcontroller volksbot_motorcontroller
   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
 )
 
-install(TARGETS volksbot_motorcontroller_node volksbot_motorcontroller_node
+install(TARGETS bas_motorcontroller_node bas_motorcontroller_node
   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
