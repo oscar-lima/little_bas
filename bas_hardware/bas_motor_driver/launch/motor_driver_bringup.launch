@@ -1,7 +1,0 @@
-<?xml version="1.0"?>
-<launch>
-	
-	<!-- run arduino serial communication node, rosserial -->
-	<node pkg="rosserial_python" type="serial_node.py" name="motor_driver_arduino_serial" args="_port:=/dev/arduino/arduino_one_9523335323135181E1B2" > </node>
-
-</launch>
