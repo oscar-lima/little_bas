@@ -3,6 +3,9 @@
  *
  *  Created on: Nov 14, 2011
  *      Author: Frederik Hegger
+ * 
+ * Minor adaptations made by Oscar Lima (olima_84@yahoo.com)
+ * 
  */
 
 #include <ros/ros.h>
@@ -31,7 +34,7 @@ void base_commands(const geometry_msgs::Twist::ConstPtr& command)
 
 int main(int argc, char **argv)
 {
-	ros::init(argc, argv, "mdr_volksbot_motorcontroller");
+	ros::init(argc, argv, "bas_motorcontroller");
 	ros::NodeHandle nh("~");
 
 	// Publisher and Subscriber
@@ -58,14 +61,14 @@ int main(int argc, char **argv)
 	CRobotPlatformDifferentialDrive *differential_drive = NULL;
 
 	// get parameters
-	string device_name = "/dev/volksbot/vb_motorcontroller";
+	string device_name = "/dev/little_bas/bas_motorcontroller";
 	if (nh.getParam("device_name", device_name) == false)
 		ROS_WARN("Parameter device_name not specified in launch file, used default value: %s", device_name.c_str());
 
 	// establish connection to the motorcontroller
 	if (!robot_factory->connect(device_name))
 	{
-		ROS_ERROR_STREAM("Could not connect to the VolksBot motor controller on " << device_name);
+		ROS_ERROR_STREAM("Could not connect to the little_bas motor controller on " << device_name);
 		return -1;
 	}
 
@@ -77,7 +80,7 @@ int main(int argc, char **argv)
 	double radian_per_tic_right = (2.0 * M_PI) / (double) tics_per_turn_of_wheel_right;
 	int encoder_tics_left = 0, encoder_tics_right = 0;
 
-	ROS_INFO("Successfully connected to VolksBot motorcontroller");
+	ROS_INFO("Successfully connected to little_bas motorcontroller");
 
 	ros::Rate loop_rate(50);
 	while (ros::ok())
