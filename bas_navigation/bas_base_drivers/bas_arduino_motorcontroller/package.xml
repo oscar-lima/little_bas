@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <package>
-	<name>bas_motor_driver</name>
+	<name>bas_arduino_motorcontroller</name>
 	<version>1.0.0</version>
 	<description>
 		little bas motor driver with arduino and arduino motor shield

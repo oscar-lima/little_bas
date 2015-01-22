@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(bas_motor_driver)
+project(bas_arduino_motorcontroller)
 
 find_package(catkin REQUIRED COMPONENTS
   rosserial_arduino
@@ -18,5 +18,5 @@ rosserial_configure_client(
   TOOLCHAIN_FILE ${ROSSERIAL_ARDUINO_TOOLCHAIN}
 )
 
-rosserial_add_client_target(firmware bas_motor_driver ALL)
-rosserial_add_client_target(firmware bas_motor_driver-upload)
+rosserial_add_client_target(firmware bas_arduino_motorcontroller ALL)
+rosserial_add_client_target(firmware bas_arduino_motorcontroller-upload)
