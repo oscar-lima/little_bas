@@ -21,33 +21,33 @@ catkin_package(
 
 include_directories(
   ${catkin_INCLUDE_DIRS}
-  common/include
-  common/include/${PROJECT_NAME} 
+  include
+  include/${PROJECT_NAME} 
 )
 
 add_library(volksbot_motorcontroller 
-  common/src/robot_factory.cpp
-  common/src/robot_platform_volksbot_rt.cpp
-  common/src/robot_platform_differential_drive.cpp
-  common/src/timer.cpp
-  common/src/com_adapter.cpp
-  common/src/layer/communication_layer.cpp
-  common/src/layer/translation_layer.cpp
-  common/src/layer/vmc_api.cpp
-  common/src/storage/motor.cpp
-  common/src/storage/storage.cpp
-  common/src/support/channel.cpp
-  common/src/support/data.cpp
-  common/src/support/error.cpp
-  common/src/support/message.cpp
-  common/src/support/multisend.cpp
-  common/src/support/request.cpp
-  common/src/support/send_two.cpp
-  common/src/support/timestamp.cpp
+  src/robot_factory.cpp
+  src/robot_platform_volksbot_rt.cpp
+  src/robot_platform_differential_drive.cpp
+  src/timer.cpp
+  src/com_adapter.cpp
+  src/layer/communication_layer.cpp
+  src/layer/translation_layer.cpp
+  src/layer/vmc_api.cpp
+  src/storage/motor.cpp
+  src/storage/storage.cpp
+  src/support/channel.cpp
+  src/support/data.cpp
+  src/support/error.cpp
+  src/support/message.cpp
+  src/support/multisend.cpp
+  src/support/request.cpp
+  src/support/send_two.cpp
+  src/support/timestamp.cpp
 )
 
 add_executable(bas_motorcontroller_node 
-  ros/src/volksbot_motorcontroller_node.cpp
+  nodes/volksbot_motorcontroller_node.cpp
 )
 add_dependencies(bas_motorcontroller_node ${catkin_EXPORTED_TARGETS})
 
@@ -64,11 +64,11 @@ install(TARGETS bas_motorcontroller_node bas_motorcontroller_node
   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
-install(DIRECTORY common/include/${PROJECT_NAME}/
+install(DIRECTORY include/${PROJECT_NAME}/
   DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
   FILES_MATCHING PATTERN "*.h"
 )
 
-install(DIRECTORY ros/launch/
-  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/ros/launch
+install(DIRECTORY launch/
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/launch
 )
