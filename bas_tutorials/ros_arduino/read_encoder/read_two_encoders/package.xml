@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package>
+	<name>read_two_encoders</name>
+	<version>1.0.0</version>
+	<description>
+		This program reads two fast encoders and takes into account
+		the rotation direction (clockwise and counterclockwise) by
+		reading encoder signal B. Then exposes the encoder value trough
+		serial port at 9600 BAUD speed.
+	</description>
+
+	<maintainer email="olima_84@yahoo.com">Oscar Lima</maintainer>
+
+	<license>GPLv2</license>
+
+	<buildtool_depend>catkin</buildtool_depend>
+	<build_depend>rosserial_arduino</build_depend>
+	<build_depend>rosserial_client</build_depend>
+	<build_depend>std_msgs</build_depend>
+	<run_depend>rosserial_arduino</run_depend>
+	<run_depend>rosserial_client</run_depend>
+	<run_depend>std_msgs</run_depend>
+
+</package>
