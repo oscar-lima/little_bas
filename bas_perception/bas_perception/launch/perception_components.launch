@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<launch>
+	
+	<!-- asus xtion point cloud depth camera driver -->
+	<include file="$(find openni2_launch)/launch/openni2.launch"/>
+	
+</launch>

@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<launch>
+	
+	<!-- bas arm driver -->
+	<node pkg="bas_arm_driver" type="bas_arm_driver_node" name="bas_arm_driver" output="screen" required="true"> </node>
+	
+	<!-- bas dynamic reconfigure arm tester -->
+	<node pkg="bas_arm_driver_tester" type="bas_arm_driver_tester" name="bas_arm_driver_tester" output="screen" required="false"> </node>
+	
+	<!-- bas pan-tilt unit dynamic reconfigure tester -->
+	<node pkg="bas_pan_tilt_unit_tester" type="bas_pan_tilt_unit_tester" name="bas_pan_tilt_unit_tester" output="screen" required="false"> </node>
+	
+</launch>

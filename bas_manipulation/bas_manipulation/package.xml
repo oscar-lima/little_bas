@@ -3,16 +3,12 @@
 	<name>bas_manipulation</name>
 	<version>1.0.0</version>
 	<description>
-		Little bas differential robot project documentation
+		bas manipulation pesudo metapackage, just contains a launch file
+		which launches all required nodes for manipulation
 	</description>
 
 	<maintainer email="olima_84@yahoo.com">Oscar Lima</maintainer>
-
 	<license>GPLv2</license>
-
 	<buildtool_depend>catkin</buildtool_depend>
-	<export>
-	<metapackage/>
-	</export>
-
+	
 </package>

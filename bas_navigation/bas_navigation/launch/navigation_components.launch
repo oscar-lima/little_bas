@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<launch>
+	
+	<!-- bas base driver -->
+	<include file="$(find bas_motorcontroller)/launch/bas_motorcontroller.launch"/>
+	
+</launch>

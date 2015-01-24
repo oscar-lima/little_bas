@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <package>
-	<name>bas_navigation</name>
+	<name>bas_perception</name>
 	<version>1.0.0</version>
 	<description>
-		bas navigation pesudo metapackage, just contains a launch file
-		which launches all required nodes for navigation
+		bas perception pesudo metapackage, just contains a launch file
+		which launches all required nodes for perception
 	</description>
 
 	<maintainer email="olima_84@yahoo.com">Oscar Lima</maintainer>
