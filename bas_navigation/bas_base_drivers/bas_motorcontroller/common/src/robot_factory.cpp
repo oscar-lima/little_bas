@@ -73,15 +73,15 @@ void CRobotFactory::setParameters()
 	{
 		this->_robot_platform_differential_drive->setPoseUpdateInterval(20);
 		this->_robot_platform_differential_drive->setMoveUpdateInterval(20);
-		this->_robot_platform_differential_drive->_pstrDifferentialDriveRobotProperties->dAxisLength = 463;
-		this->_robot_platform_differential_drive->_pstrDifferentialDriveRobotProperties->dWheelCircumferenceLeft = 534.1;
-		this->_robot_platform_differential_drive->_pstrDifferentialDriveRobotProperties->dWheelCircumferenceRight = 534.1;
-		this->_robot_platform_differential_drive->_pstrDifferentialDriveRobotProperties->unTicsPerTurnOfWheelLeft = 37000;
-		this->_robot_platform_differential_drive->_pstrDifferentialDriveRobotProperties->unTicsPerTurnOfWheelRight = 37000;
+		this->_robot_platform_differential_drive->_pstrDifferentialDriveRobotProperties->dAxisLength = 350;
+		this->_robot_platform_differential_drive->_pstrDifferentialDriveRobotProperties->dWheelCircumferenceLeft = 100;
+		this->_robot_platform_differential_drive->_pstrDifferentialDriveRobotProperties->dWheelCircumferenceRight = 100; //539
+		this->_robot_platform_differential_drive->_pstrDifferentialDriveRobotProperties->unTicsPerTurnOfWheelLeft = 2900;
+		this->_robot_platform_differential_drive->_pstrDifferentialDriveRobotProperties->unTicsPerTurnOfWheelRight = 2900;
 		this->_robot_platform_differential_drive->_pstrDifferentialDriveRobotProperties->dTurningAdaptation = 1.0;
 		this->_robot_platform_differential_drive->_pstrRobotProperties->dMinTranslationalVelocity = 0;
-		this->_robot_platform_differential_drive->_pstrRobotProperties->dMaxTranslationalVelocity = 0.4;
-		this->_robot_platform_differential_drive->_pstrRobotProperties->dMaxAngularVelocity = 1.5;
+		this->_robot_platform_differential_drive->_pstrRobotProperties->dMaxTranslationalVelocity = 0.2;
+		this->_robot_platform_differential_drive->_pstrRobotProperties->dMaxAngularVelocity = 0.3;
 		this->_robot_platform_differential_drive->_pstrRobotProperties->dBoundingBoxDistanceFront = 150.0;
 		this->_robot_platform_differential_drive->_pstrRobotProperties->dBoundingBoxDistanceTail = 460.0;
 		this->_robot_platform_differential_drive->_pstrRobotProperties->dBoundingBoxDistanceLeft = 270.0;
