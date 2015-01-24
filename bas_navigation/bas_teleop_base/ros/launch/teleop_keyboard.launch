@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+<launch>
+	<node pkg="bas_teleop_base" type="teleop_keyboard_node" name="bas_teleop_keyboard" ns="bas_teleop_keyboard" output="screen">
+		<remap from="~cmd_vel" to="/cmd_vel" />
+		<param name="walk_vel" value="0.01" />
+		<param name="run_vel" value="0.03" />
+		<param name="yaw_rate" value="0.01" />
+		<param name="yaw_run_rate" value="0.03" />
+	</node>
+</launch>
