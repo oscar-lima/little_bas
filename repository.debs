@@ -1,0 +1,2 @@
+#little_bas dependencies: (sudo apt-get install package_name)
+ros-indigo-openni2-launch
