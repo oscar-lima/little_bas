@@ -1,2 +1,8 @@
 #little_bas dependencies: (sudo apt-get install package_name)
 ros-indigo-openni2-launch
+ros-indigo-octomap
+ros-indigo-octomap-mapping
+ros-indigo-octovis
+ros-indigo-joy
+ros-indigo-grizzly-teleop
+liburdfdom-tools
