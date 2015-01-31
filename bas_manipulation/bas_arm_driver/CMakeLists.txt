@@ -3,6 +3,10 @@ project(bas_arm_driver)
 
 find_package(catkin REQUIRED COMPONENTS
   roscpp
+  rospy
+  tf
+  sensor_msgs
+  std_msgs
 )
 
 catkin_package(
@@ -29,9 +33,19 @@ add_executable(bas_arm_driver_node
 	nodes/bas_arm_driver_node.cpp
 )
 
+## Declare a cpp executable (sate publisher)
+add_executable(bas_state_publisher
+	nodes/state_publisher.cpp
+)
+
 ## Specify libraries to link a library or executable target against
 target_link_libraries(bas_arm_driver
 	/usr/lib/libserial.so
+)
+
+## Specify libraries to link a library or executable target against
+target_link_libraries(bas_state_publisher
+	${catkin_LIBRARIES}
 )
 
 ## Specify libraries to link a library or executable target against
