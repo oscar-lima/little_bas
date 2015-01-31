@@ -54,6 +54,9 @@ void loop()
 	//write to serial port a carriage return for nice terminal visualization purposes
 	Serial.print("\n");
 	
+	//keep in mind that function InterruptA() is not explicitely called from loop function
+	//but it will be executed based on a change on low to high (RISING) from arduino pin 2
+	
 	//20 milisecond delay
 	delay(20);
 	
