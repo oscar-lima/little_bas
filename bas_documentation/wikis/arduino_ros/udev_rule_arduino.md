@@ -9,10 +9,12 @@ Documentation can be found in:
         
 The motivation for this is the following:
 
-The arduino board normally gets detected under /dev/ttyACM0 but there are another sensors (such as hokuyo laser scanner) that also
-are recognized with the same name, therefore we need to uniquely identify the device somehow. A better way is to filter by 
-product and vendor ID of the USB device, but even doing this will not identify between same arduino boards (we might have more
-tha one) so we then append the serial number of the FT232R chip on the arduino board to achieve the goal.
+The arduino board normally gets detected under /dev/ttyACM0 but there are another sensors 
+(such as hokuyo laser scanner) that also are recognized with the same name, therefore we 
+need to uniquely identify the device somehow. A better way is to filter by product and 
+vendor ID of the USB device, but even doing this will not identify between same arduino boards 
+(we might have more than one) so we then append the serial number of the FT232R chip on the 
+arduino board to achieve the goal.
 
 1. create a udev rule
 
@@ -20,7 +22,7 @@ tha one) so we then append the serial number of the FT232R chip on the arduino b
 
 2. paste this content inside
 
-SUBSYSTEMS=="usb", ATTRS{idProduct}=="0043", ATTRS{idVendor}=="2341", MODE="0666", SYMLINK+="arduino/arduino_one_$attr{serial}"
+SUBSYSTEMS=="usb", ATTRS{idProduct}=="0043", ATTRS{idVendor}=="2341", MODE="0666", SYMLINK+="little_bas/bas_arduino_uno_$attr{serial}"
 #$attr{serial} = serial number of the FT232R chip on the arduino board
 
 3. save and exit
@@ -31,12 +33,13 @@ SUBSYSTEMS=="usb", ATTRS{idProduct}=="0043", ATTRS{idVendor}=="2341", MODE="0666
 
 4. test
 
-        ls /dev/arduino
+        ls /dev/little_bas
 
 output should be similar to this one:
 
-        arduino_one_9523335323135181E1B2
+        bas_arduino_uno_9523335323135181E1B2
         
 5. Done! now you can access your device (with proper sudo rights) under the following location:
 
-        /dev/arduino/arduino_one_9523335323135181E1B2
+        /dev/little_bas/bas_arduino_uno_9523335323135181E1B2
+        

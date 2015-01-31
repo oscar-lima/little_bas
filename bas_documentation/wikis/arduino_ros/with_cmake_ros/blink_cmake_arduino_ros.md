@@ -16,5 +16,5 @@ it is compiled by using cmake ros arduino burner interface
 3. test the code
 
 		roscore
-		rosrun rosserial_python serial_node.py /dev/arduino/arduino_one_9523335323135181E1B2
+		rosrun rosserial_python serial_node.py /dev/little_bas/bas_arduino_uno_9523335323135181E1B2
 		rostopic pub toggle_led std_msgs/Empty --once
