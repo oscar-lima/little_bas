@@ -1,0 +1,11 @@
+#individual cad model parts for common motionlynx arms
+http://www.lynxmotion.com/s-5-ses-3d-models.aspx
+
+#cad model available!, lets try it
+http://grabcad.com/library/lynxmotion-robotic-arm-ssc-32
+
+#inverse kinematics with nice video
+http://www.micromegacorp.com/appnotes.html
+
+#ik based on previous video
+http://www.circuitsathome.com/mcu/robotic-arm-inverse-kinematics-on-arduino

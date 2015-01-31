@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<launch>
+	
+	<!-- loading urdf robot file into ros parameter server -->
+	<param name="bas_description" command="cat $(find bas_description)/urdf/bas_model.urdf" />
+
+	<!-- robot state publisher node -->
+	<node pkg="robot_state_publisher" type="robot_state_publisher" name="bas_state_publisher" >
+		<remap from="robot_description" to="bas_description" />
+		<remap from="joint_states" to="bas_arm_joint_states" />
+		<param name="publish_frequency" value="10" />
+	</node>
+	
+	<!-- joint state publisher (arm driver is who updates joint message) -->
+	<node pkg="bas_arm_driver" type="bas_state_publisher" name="bas_arm_joint_publisher" />
+	
+</launch>

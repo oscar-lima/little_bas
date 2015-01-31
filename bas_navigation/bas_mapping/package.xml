@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package>
+	<name>bas_mapping</name>
+	<version>0.1.0</version>
+	<description>
+		3d mapping package with octomap and readings comming from asus 
+		little_bas depth camera
+	</description>
+
+	<maintainer email="olima_84@yahoo.com">Oscar Lima</maintainer>
+	
+	<license>GPLv3</license>
+	
+	<author email="olima_84@yahoo.com">Oscar Lima</author>
+
+	<buildtool_depend>catkin</buildtool_depend>
+	<build_depend>roscpp</build_depend>
+  
+</package>

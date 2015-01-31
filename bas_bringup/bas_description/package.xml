@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package>
+	<name>bas_description</name>
+	<version>1.0.0</version>
+	<description>
+		The bas_description package : contains urdf model of the robot
+		which is based on the cad model of the robot
+	</description>
+
+	<maintainer email="olima_84@yahoo.com">Oscar Lima</maintainer>
+	<license>GPLv2</license>
+
+	<buildtool_depend>catkin</buildtool_depend>
+	<build_depend>urdf</build_depend>
+	<run_depend>urdf</run_depend>
+
+</package>

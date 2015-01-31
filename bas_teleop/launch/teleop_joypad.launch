@@ -1,0 +1,56 @@
+<?xml version="1.0" ?>
+<launch>
+	
+	<!-- teleop common device driver -->
+		<!-- joypad node device parameter -->
+		<arg name="joy_dev" default="/dev/little_bas/bas_joypad" />
+		
+		<!-- joypad node, reads analog input from the joypad and publishes joy message -->
+		<node pkg="joy" type="joy_node" name="joy_node">
+			<param name="~dev" value="$(arg joy_dev)" />
+			<!--Output is zero for axis in deadzone. Range: [-0.9, 0.9]. Default 0.05-->
+			<param name="deadzone" value="0.01" />
+		</node>
+		
+	<!-- teleop base -->
+		<!-- joypad grizzly base teleop republisher parameters -->
+		<!-- will be applied only for run deadman button, otherwise will be divided by slow_scale param -->
+		<arg name="max_drive_speed" default="0.1" /> 
+		<arg name="max_turn_speed" default="0.1" />
+		<arg name="cmd_topic" default="cmd_vel" />
+		
+		<!-- republishes joy topic as cmd_vel (to move the base) /-->
+		<node pkg="grizzly_teleop" type="teleop" name="bas_teleop_base">
+			<param name="turn_scale" value="$(arg max_turn_speed)" />
+			<param name="drive_scale" value="$(arg max_drive_speed)" />
+			<param name="slow_scale" value="10" />
+			<param name="deadman_button" value="5" />
+			<param name="fast_button" value="7" />
+			<param name="estop_button" value="0" />
+			<param name="estop_button2" value="2" />
+			<param name="fwd_axis" value="1" />
+			<param name="turn_axis" value="3" />
+			<remap from="cmd_vel" to="$(arg cmd_topic)" />
+		</node>
+		
+	<!-- teleop asus camera pan tilt unit -->
+		<!-- joypad grizzly pan tilt unit teleop republisher parameters -->
+		<arg name="max_tilt_position" default="255" />
+		<arg name="max_pan_position" default="255" />
+		<arg name="pan_tilt_unit_topic" default="pan_tilt_unit" />
+		
+		<!-- republishes joy topic as pan_tilt_unit (to move the depth camera) /-->
+		<node pkg="grizzly_teleop" type="teleop" name="bas_teleop_pan_tilt_unit" output="screen" >
+			<param name="turn_scale" value="$(arg max_pan_position)" />
+			<param name="drive_scale" value="$(arg max_tilt_position)" />
+			<param name="slow_scale" value="2" />
+			<param name="deadman_button" value="6" />
+			<param name="fast_button" value="4" />
+			<param name="estop_button" value="0" />
+			<param name="estop_button2" value="2" />
+			<param name="fwd_axis" value="1" />
+			<param name="turn_axis" value="3" />
+			<remap from="cmd_vel" to="$(arg pan_tilt_unit_topic)" />
+		</node>
+	
+</launch>
