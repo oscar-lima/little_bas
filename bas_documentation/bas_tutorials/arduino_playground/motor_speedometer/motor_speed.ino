@@ -14,7 +14,6 @@
 //Interrupt no. 0 is related to pin2 on the arduino board
 #define EncoderInterrupt 0
 
-//Encoder count variable declared as long integer (-32,768 to 32,767)
 volatile long _EncoderTicks = 0;
 unsigned long current_time = 1;
 unsigned long delta_time = 1;
