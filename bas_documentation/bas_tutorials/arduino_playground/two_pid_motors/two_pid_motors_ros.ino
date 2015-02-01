@@ -208,13 +208,20 @@ void setup()
 {
 	//initialize node
 	nh.initNode();
+	
 	//setup the ROS publishers
-	nh.advertise(ticksA_pub);
-	nh.advertise(ticksB_pub);
-	nh.advertise(pwmA_pub);
-	nh.advertise(pwmB_pub);
-	nh.advertise(speedA_pub);
-	nh.advertise(speedB_pub);
+		nh.advertise(ticksA_pub);
+		nh.advertise(ticksB_pub);
+		nh.advertise(pwmA_pub);
+		nh.advertise(pwmB_pub);
+		nh.advertise(speedA_pub);
+		nh.advertise(speedB_pub);
+	
+	//setup the ROS suscribers
+		nh.subscribe(sub_setpointA);
+		nh.subscribe(sub_setpointB);
+		nh.subscribe(sub_directionA);
+		nh.subscribe(sub_directionB);
 	
 	//PWM setup
 		// initialize pins as input or output accordingly
@@ -306,4 +313,6 @@ void loop()
 	
 	//wait for messages comming from the ros network
 	nh.spinOnce();
+	//giving some time for ROS to process the information
+	delay(10);
 }
